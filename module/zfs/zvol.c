@@ -468,7 +468,7 @@ out:
 
 	if (disk != NULL)
 #ifdef HAVE_REVALIDATE_DISK_SIZE
-		revalidate_disk_size(disk, false);
+		revalidate_disk_size(disk, zvol_revalidate_disk(disk) == 0);
 #else
 		revalidate_disk(disk);
 #endif
